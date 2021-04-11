@@ -1,64 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Mi mini pagina en php</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP PRACTICA</title>
+    <link rel="stylesheet" href="diseño.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <h1>Practicando PHP</h1>
-    <?php
+
+    <div class="card card-body">
+        <!--cuando ejecutes el submit abriremos el documento save_task.php que almacena una conexion a la base de datos
+            y que hará la insercion a nuestra base de datos.
+        al ejecutar el metodo post tambien le pasamos los parametros -->
+        <form action="save_task.php" method="POST">
+            <div class="form-group">
+                <input type="text" name="Nombre" class="form-control"
+                placeholder="Nombre Futbolista" autofocus>
+            </div> 
+            <div class="form-group">
+                <input type="text" name="Posicion" class="form-control"
+                placeholder="Posicion MC,DF,DI,LI,LR,etc" autofocus>
+            </div>  
+            <div class="form-group">
+                <textarea name="Club" rows="1" class="form-control"
+                placeholder="Club de futbol al que pertenece"></textarea>
+            </div>   
+            <input type="submit" class="btn btn-success btn-block"
+            name="save_task" value="Save Task">
+        </form>       
+    </div>
+
     
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-
-    try {
-        $conn = new PDO("mysql:host=$servername;dbname=Jonathan", $username, $password);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Connected successfully";
-
-        } catch(PDOException $e) {
-        echo "Connection failed: " . $e->getMessage();
-    }
-
-        /*creamos la base de datos
-        $sql = "CREATE DATABASE myDBPDO";
-        // use exec() because no results are returned
-        $conn->exec($sql);
-        echo "Database created successfully<br>";
-        */
-
-
-    /*try {
-        //code...
-        $sql = "CREATE TABLE Futbolistas (
-            id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-            firstname VARCHAR(30) NOT NULL,
-            lastname VARCHAR(30) NOT NULL,
-            Equipo VARCHAR(50)
-            )";
-
-        if ($conn->query($sql) == TRUE) {
-            echo "Table created successfully";
-        } 
-
-    } catch (PDOException $e1) {
-        echo "Error al crear la tabla";
-    }*/
-
-
-    //crear un registro con PDO
-    /*
-    $sql = "INSERT INTO Futbolistas (firstname, lastname, Equipo)
-    VALUES ('Cristiano', 'Ronaldo', 'FC Barcelona')";
-    // use exec() because no results are returned
-    $conn->exec($sql);
-    echo "New record created successfully";
-    */
-
-    //Cerramos la conexion
-    $conn=null;
-
-    ?>
 </body>
 </html>
