@@ -20,22 +20,22 @@
         <form action="save_task.php" method="POST">
             <div class="form-group">
                 <input type="text" name="Nombre" class="form-control"
-                placeholder="Nombre Futbolista" autofocus>
+                placeholder="Titulo" autofocus>
             </div> 
             <div class="form-group">
-                <input type="text" name="Posicion" class="form-control"
-                placeholder="Posicion MC,DF,DI,LI,LR,etc" autofocus>
+                <input type="text" name="Desc_tarea" class="form-control"
+                placeholder="Descripción" autofocus>
             </div>  
             <div class="form-group">
-                <textarea name="Club" rows="1" class="form-control"
-                placeholder="Club de futbol al que pertenece"></textarea>
+                <textarea name="Email_usuario" rows="1" class="form-control"
+                placeholder="Email"></textarea>
             </div>   
             <input type="submit" class="btn btn-success btn-block"
             name="save_task" value="Save Task">
         </form>       
     </div>
 
-    <?php echo readfile("sintaxis") ?>
+
 
 
 </body>
