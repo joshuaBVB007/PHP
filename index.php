@@ -35,6 +35,8 @@
         </form>       
     </div>
 
-    
+    <?php echo readfile("sintaxis") ?>
+
+
 </body>
 </html>

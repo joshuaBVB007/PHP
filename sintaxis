@@ -1,22 +1,16 @@
-//te imprime un monton de tablas con informacion y versiones
+    //te imprime un monton de tablas con informacion y versiones
     //phpinfo();
-
-
     //creacion de una variable en php
     $minombre="Jonathan";
     $miapellido="Calderón";
-
     //Declaracion de booleanos en php 
     $cierto=true;
     $falso=false;
-
     //echo es nuestro System.out.print de Java
     echo "<h1>Hola " .$minombre. "</h1>";
-
     //Creando una constante en php: las constantes en php se crean con el metodo define()
     define("Const_1","Soy una constante");
     echo Const_1;
-
     //condicionales en PHP
     $edad=19;
     if($edad<18){
@@ -27,8 +21,6 @@
         echo "SOY ELSE";  
     
     }
-
-
     //Bucles en PHP
     echo "<br>SOMOS UN WHILE<br>";
     $freno=1;
@@ -40,9 +32,7 @@
         echo "The number is: $freno <br>";
         $freno++;
     }
-
     echo "<br>ESTO ES UN FOR <br>";
     for($i=0;$i<10;$i++){
         echo "$i";
     }
-
